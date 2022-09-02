@@ -21,44 +21,48 @@
             <span class="text-xl font-semibold text-white">Rezha Jamil</span>
         </div>
     </div>
-    <div class="z-20 w-full h-full px-6 py-4 -mt-6 bg-white rounded-t-3xl">
-        <div class="flex flex-col justify-between h-full">
-            <div class="grid grid-cols-3 gap-4">
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition rounded-md shadow-lg bg-violet-600 hover:bg-violet-800 aspect-square">
-
-                    </a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition rounded-md shadow-lg bg-amber-600 hover:bg-amber-800 aspect-square">
-
-                    </a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition rounded-md shadow-lg bg-emerald-600 hover:bg-emerald-800 aspect-square">
-
-                    </a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition bg-indigo-600 rounded-md shadow-lg hover:bg-indigo-800 aspect-square">
-
-                    </a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition bg-orange-600 rounded-md shadow-lg hover:bg-orange-800 aspect-square">
-
-                    </a>
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="" class="w-20 p-3 text-white transition bg-teal-600 rounded-md shadow-lg hover:bg-teal-800 aspect-square">
-
-                    </a>
-                </div>
+    <div class="z-20 flex flex-col justify-between w-full h-full px-6 py-6 -mt-6 bg-white rounded-t-3xl grow">
+        <div class="grid grid-cols-3 gap-y-6 gap-x-2">
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-violet-600 hover:bg-violet-800 aspect-square">
+                    <i class="text-xl fa-regular fa-calendar-check"></i>
+                    <span class="text-sm font-semibold uppercase">Absen</span>
+                </a>
             </div>
-            <span class="inline-block w-full text-lg font-bold text-center text-sekunder">
-                MENU
-            </span>
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-800 aspect-square">
+                    <i class="text-xl fa-solid fa-fire"></i>
+                    <span class="text-sm font-semibold uppercase">Challenge</span>
+                </a>
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-emerald-600 hover:bg-emerald-800 aspect-square">
+                    <i class="text-xl fa-regular fa-newspaper"></i>
+                    <span class="text-sm font-semibold uppercase">News</span>
+                </a>
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-800 aspect-square">
+                    <i class="text-xl fa-solid fa-star"></i>
+                    <span class="text-sm font-semibold uppercase">Poin</span>
+                </a>
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-800 aspect-square">
+                    <i class="text-xl fa-solid fa-pen-clip"></i>
+                    <span class="text-sm font-semibold uppercase">Quiz</span>
+                </a>
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-teal-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-teal-800 aspect-square">
+                    <i class="text-xl fa-solid fa-ranking-star"></i>
+                    <span class="text-sm font-semibold uppercase whitespace-pre-wrap">Perform</span>
+                </a>
+            </div>
         </div>
+        <span class="inline-block w-full text-xl font-bold text-center font-batik text-sekunder">
+            MENU
+        </span>
     </div>
 </div>
 @endsection
