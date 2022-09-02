@@ -21,7 +21,7 @@
             <span class="text-xl font-semibold text-white">Rezha Jamil</span>
         </div>
     </div>
-    <div class="z-20 flex flex-col justify-between w-full h-full px-6 py-6 -mt-6 bg-white rounded-t-3xl grow">
+    <div class="z-20 flex flex-col w-full h-full px-6 py-6 -mt-6 bg-white rounded-t-3xl grow">
         <div class="grid grid-cols-3 gap-y-6 gap-x-2">
             <div class="flex items-center justify-center">
                 <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-violet-600 hover:bg-violet-800 aspect-square">
@@ -60,7 +60,7 @@
                 </a>
             </div>
         </div>
-        <span class="inline-block w-full text-xl font-bold text-center font-batik text-sekunder">
+        <span class="inline-block w-full my-auto text-xl font-bold text-center font-batik text-sekunder">
             MENU
         </span>
     </div>
