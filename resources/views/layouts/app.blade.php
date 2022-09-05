@@ -22,6 +22,7 @@
         }
 
     </style>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     <script src="https://kit.fontawesome.com/b2ba1193ce.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-white">
