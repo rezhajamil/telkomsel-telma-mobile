@@ -698,20 +698,14 @@ select {
 .z-0 {
   z-index: 0;
 }
+.z-10 {
+  z-index: 10;
+}
 .z-20 {
   z-index: 20;
 }
 .z-50 {
   z-index: 50;
-}
-.-z-10 {
-  z-index: -10;
-}
-.-z-0 {
-  z-index: 0;
-}
-.z-10 {
-  z-index: 10;
 }
 .mx-auto {
   margin-left: auto;
@@ -768,6 +762,15 @@ select {
 .-mt-6 {
   margin-top: -1.5rem;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.mt-20 {
+  margin-top: 5rem;
+}
+.mt-auto {
+  margin-top: auto;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -779,18 +782,6 @@ select {
 }
 .-mr-2 {
   margin-right: -0.5rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
-}
-.mt-12 {
-  margin-top: 3rem;
-}
-.mt-20 {
-  margin-top: 5rem;
-}
-.mt-auto {
-  margin-top: auto;
 }
 .block {
   display: block;
@@ -865,6 +856,9 @@ select {
   width: -moz-fit-content;
   width: fit-content;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .w-20 {
   width: 5rem;
 }
@@ -876,9 +870,6 @@ select {
 }
 .w-6 {
   width: 1.5rem;
-}
-.w-3\/4 {
-  width: 75%;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -1043,11 +1034,11 @@ select {
 .border {
   border-width: 1px;
 }
-.border-4 {
-  border-width: 4px;
-}
 .border-2 {
   border-width: 2px;
+}
+.border-4 {
+  border-width: 4px;
 }
 .border-t {
   border-top-width: 1px;
@@ -1079,6 +1070,10 @@ select {
 .border-transparent {
   border-color: transparent;
 }
+.border-sekunder {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 25 66 / var(--tw-border-opacity));
+}
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1091,17 +1086,13 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-sekunder {
+.border-violet-600 {
   --tw-border-opacity: 1;
-  border-color: rgb(2 25 66 / var(--tw-border-opacity));
+  border-color: rgb(124 58 237 / var(--tw-border-opacity));
 }
-.border-emerald-600 {
+.border-amber-600 {
   --tw-border-opacity: 1;
-  border-color: rgb(5 150 105 / var(--tw-border-opacity));
-}
-.border-indigo-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(79 70 229 / var(--tw-border-opacity));
+  border-color: rgb(217 119 6 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -1122,6 +1113,10 @@ select {
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+.bg-sekunder {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 25 66 / var(--tw-bg-opacity));
 }
 .bg-transparent {
   background-color: transparent;
@@ -1153,10 +1148,6 @@ select {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
-}
-.bg-sekunder {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 25 66 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1194,6 +1185,10 @@ select {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -1209,10 +1204,6 @@ select {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
@@ -1273,6 +1264,10 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1280,22 +1275,6 @@ select {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
 }
 .font-medium {
   font-weight: 500;
@@ -1384,9 +1363,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
 }
-.text-emerald-600 {
+.text-violet-600 {
   --tw-text-opacity: 1;
-  color: rgb(5 150 105 / var(--tw-text-opacity));
+  color: rgb(124 58 237 / var(--tw-text-opacity));
+}
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1480,21 +1463,21 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(2 25 66 / var(--tw-bg-opacity));
 }
-.selection\:bg-emerald-600 *::-moz-selection {
+.selection\:bg-violet-600 *::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
-.selection\:bg-emerald-600 *::selection {
+.selection\:bg-violet-600 *::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
-.selection\:bg-indigo-600 *::-moz-selection {
+.selection\:bg-amber-600 *::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
 }
-.selection\:bg-indigo-600 *::selection {
+.selection\:bg-amber-600 *::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
 }
 .selection\:text-white *::-moz-selection {
   --tw-text-opacity: 1;
@@ -1512,21 +1495,21 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(2 25 66 / var(--tw-bg-opacity));
 }
-.selection\:bg-emerald-600::-moz-selection {
+.selection\:bg-violet-600::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
-.selection\:bg-emerald-600::selection {
+.selection\:bg-violet-600::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
 }
-.selection\:bg-indigo-600::-moz-selection {
+.selection\:bg-amber-600::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
 }
-.selection\:bg-indigo-600::selection {
+.selection\:bg-amber-600::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
 }
 .selection\:text-white::-moz-selection {
   --tw-text-opacity: 1;

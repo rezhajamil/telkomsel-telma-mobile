@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,7 @@ Route::middleware(['auth'])->group(
     function () {
         Route::resource('/', HomeController::class);
         Route::resource('/absen', AbsenController::class);
+        Route::resource('/challenge', ChallengeController::class);
     }
 );
 

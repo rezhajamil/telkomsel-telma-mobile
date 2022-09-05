@@ -30,7 +30,7 @@
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-800 aspect-square">
+                <a href="{{ route('challenge.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-800 aspect-square">
                     <i class="text-xl fa-solid fa-fire"></i>
                     <span class="text-sm font-semibold uppercase">Challenge</span>
                 </a>
