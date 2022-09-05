@@ -19,7 +19,7 @@
             </div>
         </div>
         <i class="mx-auto mt-20 text-8xl animate-bounce fa-solid fa-angles-down text-violet-600"></i>
-        <a href="" class="inline-block w-3/4 px-4 py-2 mx-auto mt-auto mb-4 text-xl font-bold text-center text-white transition-all rounded bg-violet-600 hover:no-underline hover:bg-violet-800">HADIR</a>
+        <a href="" class="inline-block w-3/4 px-4 py-2 mx-auto mt-16 mb-auto text-xl font-bold text-center text-white transition-all rounded bg-violet-600 hover:no-underline hover:bg-violet-800">HADIR</a>
     </div>
 </div>
 @endsection
