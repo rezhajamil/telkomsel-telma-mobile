@@ -9,17 +9,25 @@
         </div>
     </div>
     <div class="z-20 flex flex-col w-full h-full px-6 py-4 -mt-6 bg-white rounded-t-3xl grow">
-        <span class="inline-block mx-auto text-3xl text-center text-amber-600 font-batik selection:bg-amber-600 selection:text-white">Tari Kelompok Daerah Sekolah</span>
-        <div class="flex items-end mx-auto mt-10 border-2 rounded border-amber-600 ">
-            <div class="px-3 py-2">
-                <i class="text-3xl fa-solid fa-clock text-amber-600"></i>
+        <form action="" method="post" class="flex flex-col gap-y-6">
+            @csrf
+            <select name="judul" id="judul" class="w-full py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+                <option value="" selected disabled>Pilih Judul Challenge</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            @error('judul')
+            <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+            @enderror
+            <div class="w-full px-3 py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+                <span class="">Poin : 80</span>
             </div>
-            <div class="px-3 py-2 bg-amber-600">
-                <span class="inline-block text-3xl font-semibold text-center text-white align-middle selection:bg-amber-600 selection:text-white" id="clock">09:11</span>
+            <div class="w-full px-3 py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+                <span class="">Keterangan :</span>
             </div>
-        </div>
-        <i class="mx-auto mt-20 text-8xl animate-bounce fa-solid fa-angles-down text-amber-600"></i>
-        <a href="" class="inline-block w-3/4 px-4 py-2 mx-auto mt-auto mb-4 text-xl font-bold text-center text-white rounded bg-amber-600 hover:no-underline">HADIR</a>
+            <input type="text" name="url" id="url" placeholder="Link" class="w-full px-3 py-2 font-bold border-2 rounded placeholder:font-normal outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+            <button type="submit" class="inline-block w-full px-4 py-2 mx-auto mt-auto text-xl font-bold text-center text-white transition-all rounded bg-amber-600 hover:no-underline hover:bg-amber-800">Submit</button>
+        </form>
     </div>
 </div>
 @endsection
@@ -30,9 +38,7 @@
             const today = new Date();
             let h = today.getHours();
             let m = today.getMinutes();
-            console.log(m)
             let s = today.getSeconds();
-            console.log(s)
             h = checkTime(h);
             m = checkTime(m);
             s = checkTime(s);

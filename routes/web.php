@@ -3,6 +3,9 @@
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PoinController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +24,9 @@ Route::middleware(['auth'])->group(
         Route::resource('/', HomeController::class);
         Route::resource('/absen', AbsenController::class);
         Route::resource('/challenge', ChallengeController::class);
+        Route::resource('/news', NewsController::class);
+        Route::resource('/poin', PoinController::class);
+        Route::resource('/quiz', QuizController::class);
     }
 );
 
