@@ -27,6 +27,8 @@ Route::middleware(['auth'])->group(
         Route::resource('/news', NewsController::class);
         Route::resource('/poin', PoinController::class);
         Route::resource('/quiz', QuizController::class);
+        Route::get('/start/quiz', [QuizController::class, 'start']);
+        Route::post('/store_answer/quiz/', [QuizController::class, 'store_answer'])->name('quiz.answer.store');
     }
 );
 

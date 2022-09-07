@@ -24,6 +24,9 @@ Route::middleware('guest')->group(function () {
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
 
+    Route::get('aktivasi-akun', [PasswordResetLinkController::class, 'aktivasi'])
+        ->name('akun.aktivasi');
+
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
         ->name('password.email');
 
