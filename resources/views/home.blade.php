@@ -4,7 +4,7 @@
     <div class="relative w-full px-2 pb-10 bg-premier h-fit">
         <div class="flex items-center justify-end py-2 bg-transparent h-fit">
             <span class="absolute inset-x-0 inline-block w-full text-3xl text-center text-white select-none font-batik">DigiSquad</span>
-            <a href="" class="z-10 flex items-center p-3 rounded-full shadow h-fit w-fit bg-slate-50"><i class="fa-solid fa-user text-premier"></i></a>
+            <a href="{{ URL::to('/profile') }}" class="z-10 flex items-center p-3 rounded-full shadow h-fit w-fit bg-slate-50"><i class="fa-solid fa-user text-premier"></i></a>
         </div>
         <div id="slider" class="py-2 my-2 carousel slide" data-ride="carousel">
             <div class="carousel-inner">

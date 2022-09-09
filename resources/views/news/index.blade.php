@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between px-2 py-2 h-fit">
             <span class="absolute inset-x-0 inline-block w-full text-3xl text-center text-white select-none font-batik">News</span>
             <a href="{{ URL::to('/') }}" class="z-10 flex items-center h-fit w-fit"><i class="text-xl text-white fa-solid fa-house"></i></a>
-            <a href="" class="z-10 flex items-center p-3 rounded-full shadow h-fit w-fit bg-slate-50"><i class="fa-solid fa-user text-emerald-600"></i></a>
+            <a href="{{ URL::to('/profile') }}" class="z-10 flex items-center p-3 rounded-full shadow h-fit w-fit bg-slate-50"><i class="fa-solid fa-user text-emerald-600"></i></a>
         </div>
     </div>
     <div class="p-3 mb-4 bg-white rounded-md shadow-lg shadow-tersier">

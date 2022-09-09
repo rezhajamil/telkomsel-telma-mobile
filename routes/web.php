@@ -5,6 +5,7 @@ use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PoinController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::middleware(['auth'])->group(
         Route::resource('/quiz', QuizController::class);
         Route::get('/start/quiz', [QuizController::class, 'start']);
         Route::post('/store_answer/quiz/', [QuizController::class, 'store_answer'])->name('quiz.answer.store');
+        Route::get('/profile', [ProfileController::class, 'index']);
     }
 );
 
