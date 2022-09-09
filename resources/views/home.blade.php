@@ -24,37 +24,37 @@
     <div class="z-20 flex flex-col w-full h-full px-6 py-6 -mt-6 bg-white rounded-t-3xl grow">
         <div class="grid grid-cols-3 gap-y-6 gap-x-2">
             <div class="flex items-center justify-center px-2">
-                <a href="{{ route('absen.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-violet-600 hover:bg-violet-800 aspect-square">
+                <a href="{{ route('absen.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-violet-600 hover:bg-violet-700 aspect-square">
                     <i class="text-xl fa-regular fa-calendar-check"></i>
                     <span class="text-sm font-semibold uppercase">Absen</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('challenge.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-800 aspect-square">
+                <a href="{{ route('challenge.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-700 aspect-square">
                     <i class="text-xl fa-solid fa-fire"></i>
                     <span class="text-sm font-semibold uppercase">Challenge</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('news.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-emerald-600 hover:bg-emerald-800 aspect-square">
+                <a href="{{ route('news.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-emerald-600 hover:bg-emerald-700 aspect-square">
                     <i class="text-xl fa-regular fa-newspaper"></i>
                     <span class="text-sm font-semibold uppercase">News</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('poin.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-800 aspect-square">
+                <a href="{{ route('poin.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-700 aspect-square">
                     <i class="text-xl fa-solid fa-star"></i>
                     <span class="text-sm font-semibold uppercase">Poin</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('quiz.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-800 aspect-square">
+                <a href="{{ route('quiz.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-700 aspect-square">
                     <i class="text-xl fa-solid fa-pen-clip"></i>
                     <span class="text-sm font-semibold uppercase">Quiz</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-teal-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-teal-800 aspect-square">
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-teal-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-teal-700 aspect-square">
                     <i class="text-xl fa-solid fa-ranking-star"></i>
                     <span class="text-sm font-semibold uppercase whitespace-pre-wrap">Perform</span>
                 </a>
