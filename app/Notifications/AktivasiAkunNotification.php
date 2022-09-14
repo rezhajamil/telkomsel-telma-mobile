@@ -2,11 +2,14 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class AktivasiAkunNotification extends Notification
 {
@@ -41,10 +44,15 @@ class AktivasiAkunNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $token = Str::random(60);
+
+        DB::table('password_resets')->where('email', $notifiable->email)->update([
+            'token' => \bcrypt($token),
+        ]);
         return (new MailMessage)
             ->subject("Aktivasi Akun Digi Squad")
             ->line('Tekan tombol dibawah ini untuk membuat password akun DigiSquad Anda')
-            ->action('Buat Password Akun', URL::to("/reset-password/") . "/" . $notifiable->remember_token . '?email=' . urlencode($notifiable->email))
+            ->action('Buat Password Akun', URL::to("/reset-password/") . "/" . $token . '?email=' . urlencode($notifiable->email))
             ->line('Terimakasih telah mendukung kami')
             ->salutation("DigiSquad");
     }

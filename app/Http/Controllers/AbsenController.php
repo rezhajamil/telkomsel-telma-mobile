@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Absen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AbsenController extends Controller
 {
@@ -14,7 +15,9 @@ class AbsenController extends Controller
      */
     public function index()
     {
-        return view('absen.index');
+        $pertemuan = DB::table('daftar_pertemuan')->orderByDesc('date')->orderByDesc('time')->first();
+        $absen = DB::table('absen')->where('telp', auth()->user()->telp)->where('judul', $pertemuan->judul)->count();
+        return view('absen.index', compact('pertemuan', 'absen'));
     }
 
     /**
@@ -35,7 +38,25 @@ class AbsenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => ['required'],
+            'pembicara' => ['required'],
+            'poin' => ['required'],
+        ]);
+
+        DB::table('absen')->insert([
+            'nama' => auth()->user()->nama,
+            'telp' => auth()->user()->telp,
+            'id_digipos' => auth()->user()->telp,
+            'judul' => $request->judul,
+            'pembicara' => $request->pembicara,
+            'poin' => $request->poin,
+            'date' => date('Y-m-d'),
+            'time_in' => date('H:i:s'),
+            'status' => 0
+        ]);
+
+        return back();
     }
 
     /**

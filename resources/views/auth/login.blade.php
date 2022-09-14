@@ -9,14 +9,14 @@
                 <label class="block font-semibold text-white" for="email">Email</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" class="w-full font-semibold bg-white rounded-md focus:outline-white focus:border-white focus:ring-white">
                 @error('email')
-                <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                <span class="block mt-1 text-sm italic text-white">{{ $message }}</span>
                 @enderror
             </div>
             <div class="w-full">
                 <label class="block font-semibold text-white" for="password">Password</label>
                 <input type="password" name="password" id="password" value="{{ old('password') }}" class="w-full font-semibold bg-white rounded-md focus:outline-white focus:border-white focus:ring-white">
                 @error('password')
-                <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
+                <span class="block mt-1 text-sm italic text-white">{{ $message }}</span>
                 @enderror
             </div>
             <button class="w-full px-4 py-2 mt-4 font-bold transition-all rounded-md bg-slate-50 text-premier hover:bg-slate-200">LOGIN</button>

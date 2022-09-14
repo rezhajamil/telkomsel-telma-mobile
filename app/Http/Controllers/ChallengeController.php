@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Challenge;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChallengeController extends Controller
 {
@@ -14,7 +15,8 @@ class ChallengeController extends Controller
      */
     public function index()
     {
-        return view('challenge.index');
+        $challenge = DB::table('daftar_challege')->get();
+        return view('challenge.index', compact('challenge'));
     }
 
     /**
@@ -81,5 +83,14 @@ class ChallengeController extends Controller
     public function destroy(Challenge $challenge)
     {
         //
+    }
+
+    public function get_challenge(Request $request)
+    {
+        $judul = $request->judul;
+
+        $challenge = DB::table('daftar_challege')->where('judul', $judul)->first();
+
+        return response()->json($challenge);
     }
 }

@@ -9,23 +9,25 @@
         </div>
     </div>
     <div class="z-20 flex flex-col w-full h-full px-6 py-4 -mt-6 bg-white rounded-t-3xl grow">
-        <form action="" method="post" class="flex flex-col gap-y-6">
+        <form action="{{ challenge.store }}" method="post" class="flex flex-col gap-y-6">
             @csrf
-            <select name="judul" id="judul" class="w-full py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+            <select name="judul" id="judul" class="w-full py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800" required>
                 <option value="" selected disabled>Pilih Judul Challenge</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
+                @foreach ($challenge as $data)
+                <option value="{{ $data->judul }}">{{ $data->judul }}</option>
+                @endforeach
             </select>
             @error('judul')
             <span class="block mt-1 text-sm italic text-red-600">{{ $message }}</span>
             @enderror
             <div class="w-full px-3 py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
-                <span class="">Poin : 80</span>
+                <span class="">Poin : <span id="poin"></span></span>
             </div>
-            <div class="w-full px-3 py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
-                <span class="">Keterangan :</span>
+            <div class="w-full px-3 py-2 border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+                <span class="font-bold ">Keterangan :</span>
+                <div id="keterangan"></div>
             </div>
-            <input type="text" name="url" id="url" placeholder="Link" class="w-full px-3 py-2 font-bold border-2 rounded placeholder:font-normal outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800">
+            <input type="text" name="url" id="url" placeholder="Link" class="w-full px-3 py-2 font-bold border-2 rounded placeholder:font-normal outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800" required>
             <button type="submit" class="inline-block w-full px-4 py-2 mx-auto mt-auto text-xl font-bold text-center text-white transition-all rounded bg-amber-600 hover:no-underline hover:bg-amber-800">Submit</button>
         </form>
     </div>
@@ -34,27 +36,24 @@
 @section('script')
 <script>
     $(document).ready(function() {
-        function startTime() {
-            const today = new Date();
-            let h = today.getHours();
-            let m = today.getMinutes();
-            let s = today.getSeconds();
-            h = checkTime(h);
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
-            setTimeout(startTime, 1000);
-        }
+        $("#judul").on("input", function() {
+            let _token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
+                url: "{{ URL::to('/get_challenge') }}"
+                , method: "POST"
+                , dataType: "JSON"
+                , data: {
+                    judul: $('#judul').val()
+                    , _token: _token
+                }
+                , success: (data) => {
+                    $('#poin').html(data.poin)
+                    $('#keterangan').html(data.keterangan)
+                }
+                , error: (e) => {}
+            })
 
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i
-            }; // add zero in front of numbers < 10 
-            return i;
-        }
-
-        startTime();
-
+        })
     });
 
 </script>

@@ -13,6 +13,8 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <a href="{{ route('login') }}" class="inline-block font-semibold text-center underline text-tersier"><i class="mr-2 fa-solid fa-left-long"></i>Kembali ke Login</a>
+
     </div>
 </div>
 @endsection

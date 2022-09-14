@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(
         Route::get('/start/quiz', [QuizController::class, 'start']);
         Route::post('/store_answer/quiz/', [QuizController::class, 'store_answer'])->name('quiz.answer.store');
         Route::get('/profile', [ProfileController::class, 'index']);
+
+        Route::post('/get_challenge', [ChallengeController::class, 'get_challenge']);
     }
 );
 
