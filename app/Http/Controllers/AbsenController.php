@@ -16,7 +16,7 @@ class AbsenController extends Controller
     public function index()
     {
         $pertemuan = DB::table('daftar_pertemuan')->orderByDesc('date')->orderByDesc('time')->first();
-        $absen = DB::table('absen')->where('telp', auth()->user()->telp)->where('judul', $pertemuan->judul)->count();
+        $absen = DB::table('absen')->where('telp', auth()->user()->telp)->where('judul', $pertemuan->judul)->where('date', date('Y-m-d'))->count();
         return view('absen.index', compact('pertemuan', 'absen'));
     }
 
@@ -56,7 +56,7 @@ class AbsenController extends Controller
             'status' => 0
         ]);
 
-        return back();
+        return back()->with('success', 'Berhasil Absen');
     }
 
     /**

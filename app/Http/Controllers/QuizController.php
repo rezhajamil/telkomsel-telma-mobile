@@ -16,8 +16,12 @@ class QuizController extends Controller
      */
     public function index(Request $request)
     {
-        $quiz = DB::table('quiz_session')->where('status', '1')->first();
-        $answer = DB::table('quiz_answer')->where('session', $quiz->id)->where('telp', Auth::user()->telp)->first();
+        $quiz = DB::table('quiz_session')->where('status', '1')->where('jenis', 'Event')->orderBy('date', 'desc')->first();
+        if ($quiz) {
+            $answer = DB::table('quiz_answer')->where('session', $quiz->id)->where('telp', Auth::user()->telp)->first();
+        } else {
+            $answer = [];
+        }
         // $user = DB::table('data_user')->where('telp', $request->telp)->first();
         $history = DB::select("SELECT * FROM quiz_answer a JOIN quiz_session b ON a.session=b.id where a.telp='" . $request->telp . "' and MONTH(b.date)=" . date('m') . " order BY b.date");
 
@@ -128,7 +132,7 @@ class QuizController extends Controller
     public function answer(Request $request)
     {
         $plain = true;
-        $quiz = DB::table('quiz_session')->where('status', '1')->first();
+        $quiz = DB::table('quiz_session')->where('status', '1')->where('jenis', 'Event')->orderBy('date', 'desc')->first();
         $answer = DB::table('quiz_answer')->where('session', $quiz->id)->where('telp', $request->telp)->first();
         $user = DB::table('data_user')->where('telp', $request->telp)->first();
         $history = DB::select("SELECT * FROM quiz_answer a JOIN quiz_session b ON a.session=b.id where a.telp='" . $request->telp . "' and MONTH(b.date)=" . date('m') . " order BY b.date");
@@ -139,7 +143,7 @@ class QuizController extends Controller
     public function start(Request $request)
     {
         $plain = true;
-        $quiz = DB::table('quiz_session')->where('status', '1')->first();
+        $quiz = DB::table('quiz_session')->where('status', '1')->where('jenis', 'Event')->first();
         $answer = DB::table('quiz_answer')->where('session', $quiz->id)->where('telp', Auth::user()->telp)->first();
 
         DB::table('quiz_answer')->insert([

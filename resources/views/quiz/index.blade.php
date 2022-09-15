@@ -9,12 +9,12 @@
         </div>
     </div>
     <div class="z-20 flex flex-col w-full h-full px-6 py-2 -mt-6 bg-white rounded-t-3xl grow">
-        <span class="block w-full py-2 mb-2 text-2xl font-bold text-center text-orange-600 border-b-2">{{ $quiz->nama }}</span>
+        <span class="{{ $quiz?'block':'hidden' }} w-full py-2 mb-2 text-2xl font-bold text-center text-orange-600 border-b-2">{{ $quiz?$quiz->nama:'' }}</span>
         @if ($answer)
         @if (strtotime(date('Y-m-d H:i:s'))-strtotime($answer->time_start)>($quiz->time*60) || $answer->finish)
         <span class="block w-full mt-4 mb-2 text-xl font-bold text-center text-tersier">Quiz Telah Selesai</span>
         <span class="block w-full font-bold text-center text-tersier">Hasil Quiz Anda : {{ $answer->hasil }}/{{ count(json_decode($quiz->soal)) }}</span>
-        <div class="p-4 mx-auto my-8 bg-orange-600 rounded-full w-fit aspect-square">
+        <div class="p-3 mx-auto my-8 bg-orange-600 rounded-full w-fit aspect-square">
             <span class="block w-full py-2 text-2xl font-bold text-center text-white">{{ number_format(($answer->hasil/count(json_decode($quiz->soal)))*100,0,".",",") }}</span>
         </div>
         @else
@@ -72,11 +72,13 @@
         <input type="hidden" id="time-end" value="{{ date('M d, Y H:i:s', strtotime("+".$quiz->time." minutes", strtotime($answer->time_start))) }}">
         @endif
         @else
+        @if($quiz)
         <span class="block w-full my-2 font-semibold text-tersier">Waktu Mengerjakan Quiz : {{ $quiz->time }} Menit</span>
         {!! $quiz->deskripsi !!}
         <a href="{{ URL::to('/start/quiz') }}" class="block px-4 py-2 mx-auto my-6 font-semibold text-white transition-all bg-orange-600 rounded hover:no-underline w-fit hover:bg-black">
             Mulai Quiz
         </a>
+        @endif
         <div class="my-8">
             <span class="block w-full mb-2 font-bold text-center">Riwayat Quiz</span>
             <table class="mx-auto overflow-auto text-left border border-collapse w-fit">

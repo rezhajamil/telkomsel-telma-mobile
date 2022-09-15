@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="z-20 flex flex-col w-full h-full px-6 py-4 -mt-6 bg-white rounded-t-3xl grow">
-        <form action="{{ challenge.store }}" method="post" class="flex flex-col gap-y-6">
+        <form action="{{ route('challenge.store') }}" method="post" class="flex flex-col gap-y-6">
             @csrf
             <select name="judul" id="judul" class="w-full py-2 font-bold border-2 rounded outline-2 outline-amber-600 border-amber-600 focus:border-amber-800 focus:ring-amber-800" required>
                 <option value="" selected disabled>Pilih Judul Challenge</option>
@@ -32,6 +32,34 @@
         </form>
     </div>
 </div>
+@if (session('success'))
+<div class="flash-data d-none" data-flashdata="{{ session('success') }}"></div>
+<script>
+    var data = document.querySelector(".flash-data").getAttribute("data-flashdata");
+    Swal.fire({
+        title: 'Berhasil'
+        , text: data
+        , icon: 'success'
+        , showCancelButton: false
+        , showConfirmButton: false
+        , timer: 1500
+    , })
+
+</script>
+@endif
+@if (session('error'))
+<div class="flash-data d-none" data-flashdata="{{ session('error') }}"></div>
+<script>
+    var data = document.querySelector(".flash-data").getAttribute("data-flashdata");
+    Swal.fire({
+        title: 'Gagal'
+        , text: data
+        , icon: 'error'
+        , showCancelButton: false
+    , })
+
+</script>
+@endif
 @endsection
 @section('script')
 <script>

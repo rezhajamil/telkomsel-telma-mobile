@@ -29,6 +29,21 @@
         </form>
     </div>
 </div>
+@if (session('success'))
+<div class="flash-data d-none" data-flashdata="{{ session('success') }}"></div>
+<script>
+    var data = document.querySelector(".flash-data").getAttribute("data-flashdata");
+    Swal.fire({
+        title: 'Berhasil'
+        , text: data
+        , icon: 'success'
+        , showCancelButton: false
+        , showConfirmButton: false
+        , timer: 1500
+    , })
+
+</script>
+@endif
 @endsection
 @section('script')
 <script>

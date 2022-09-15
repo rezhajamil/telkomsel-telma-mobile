@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Challenge;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ChallengeController extends Controller
@@ -37,7 +38,30 @@ class ChallengeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => ['required'],
+            'url' => ['required'],
+        ]);
+
+        $sosmed = DB::table('sosmed')->where('telp', Auth::user()->telp)->where('challenge', $request->judul)->count();
+
+        if ($sosmed) {
+            return back()->with('error', 'Anda Sudah Mengupload untuk Challenge Ini');
+        }
+        DB::table('sosmed')->insert([
+            'nama' => Auth::user()->nama,
+            'telp' => Auth::user()->telp,
+            'id_digipos' => Auth::user()->telp,
+            'challenge' => $request->judul,
+            'link' => $request->url,
+            'keterangan' => '0',
+            'poin' => '0',
+            'approver' => '0',
+            'status' => '0',
+            'date' => date('Y-m-d'),
+        ]);
+
+        return back()->with('success', 'Berhasil Mengupload Challenge');
     }
 
     /**
