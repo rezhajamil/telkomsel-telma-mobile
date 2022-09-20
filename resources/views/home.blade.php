@@ -16,9 +16,14 @@
                 </div>
             </div>
         </div>
-        <div class="p-2 mx-2 my-2 border-4 border-white rounded-md">
-            <span class="block text-2xl font-bold text-white">Selamat Datang,</span>
-            <span class="text-xl font-semibold text-white">{{ ucwords(Auth::user()->nama) }}</span>
+        <div class="grid grid-cols-3 my-2 border-4 border-white rounded-md">
+            <div class="col-span-2 p-2 mx-2 ">
+                <span class="block text-2xl font-bold text-white">Selamat Datang,</span>
+                <span class="text-xl font-semibold text-white">{{ ucwords(Auth::user()->nama) }}</span>
+            </div>
+            <div class="flex items-center justify-center col-span-1 p-1 bg-white">
+                <span class="text-3xl font-bold text-center align-middle font-batik text-premier">100</span>
+            </div>
         </div>
     </div>
     <div class="z-20 flex flex-col w-full h-full px-6 py-6 -mt-6 bg-white rounded-t-3xl grow">
