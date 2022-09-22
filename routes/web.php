@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PoinController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,11 +29,13 @@ Route::middleware(['auth'])->group(
         Route::resource('/news', NewsController::class);
         Route::resource('/poin', PoinController::class);
         Route::resource('/quiz', QuizController::class);
+        Route::resource('/sales', SalesController::class);
         Route::get('/start/quiz', [QuizController::class, 'start']);
         Route::post('/store_answer/quiz/', [QuizController::class, 'store_answer'])->name('quiz.answer.store');
         Route::get('/profile', [ProfileController::class, 'index']);
 
         Route::post('/get_challenge', [ChallengeController::class, 'get_challenge']);
+        Route::post('/get_paket', [SalesController::class, 'get_paket']);
     }
 );
 

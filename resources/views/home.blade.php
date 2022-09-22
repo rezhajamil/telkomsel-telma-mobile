@@ -59,9 +59,9 @@
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-teal-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-teal-700 aspect-square">
-                    <i class="text-xl fa-solid fa-ranking-star"></i>
-                    <span class="text-sm font-semibold uppercase whitespace-pre-wrap">Perform</span>
+                <a href="{{ route('sales.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-teal-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-teal-700 aspect-square">
+                    <i class="text-xl fa-solid fa-chart-column"></i>
+                    <span class="text-sm font-semibold uppercase whitespace-pre-wrap">Sales</span>
                 </a>
             </div>
         </div>
