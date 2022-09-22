@@ -41,7 +41,7 @@ class SalesController extends Controller
     {
         $request->validate([
             'jenis' => 'required',
-            'msisdn' => ['required', new Msisdn],
+            'msisdn' => ['required', 'unique:sales_digisquad,msisdn', new Msisdn],
         ]);
 
         $paket = DB::table('kategori')->where('detail', $request->jenis)->first();
@@ -56,10 +56,10 @@ class SalesController extends Controller
             'serial' => $paket->poin,
             'msisdn' => $request->msisdn,
             'date' => date('Y-m-d'),
-            'sales' => '0'
+            'status' => '0'
         ]);
 
-        return back();
+        return back()->with('success', 'Berhasil Submit Penjualan');
     }
 
     /**

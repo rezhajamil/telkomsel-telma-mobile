@@ -25,7 +25,7 @@ class Msisdn implements Rule
      */
     public function passes($attribute, $value)
     {
-        if (substr($value, 0, 4) == '62811' || substr($value, 0, 4) == '62812' || substr($value, 0, 4) == '62813' || substr($value, 0, 4) == '62821' || substr($value, 0, 4) == '62822' || substr($value, 0, 4) == '62851' || substr($value, 0, 4) == '62852' || substr($value, 0, 4) == '62853') {
+        if (substr($value, 0, 5) == '62811' || substr($value, 0, 5) == '62812' || substr($value, 0, 5) == '62813' || substr($value, 0, 5) == '62821' || substr($value, 0, 5) == '62822' || substr($value, 0, 5) == '62851' || substr($value, 0, 5) == '62852' || substr($value, 0, 5) == '62853') {
             return true;
         }
 
