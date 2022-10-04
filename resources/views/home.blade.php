@@ -22,7 +22,7 @@
                 <span class="text-xl font-semibold text-white">{{ ucwords(Auth::user()->nama) }}</span>
             </div>
             <div class="flex items-center justify-center col-span-1 p-1 bg-white">
-                <span class="text-3xl font-bold text-center align-middle font-batik text-premier">100</span>
+                <span class="text-2xl font-bold text-center align-middle font-batik text-premier">{{ Auth::user()->poin }}</span>
             </div>
         </div>
     </div>
@@ -35,7 +35,8 @@
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('challenge.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-700 aspect-square">
+                {{-- <a href="{{ route('challenge.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-700 aspect-square"> --}}
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline bg-amber-600 hover:bg-amber-700 aspect-square">
                     <i class="text-xl fa-solid fa-fire"></i>
                     <span class="text-sm font-semibold uppercase">Challenge</span>
                 </a>
@@ -47,13 +48,15 @@
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('poin.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-700 aspect-square">
+                {{-- <a href="{{ route('poin.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-700 aspect-square"> --}}
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-indigo-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-indigo-700 aspect-square">
                     <i class="text-xl fa-solid fa-star"></i>
                     <span class="text-sm font-semibold uppercase">Poin</span>
                 </a>
             </div>
             <div class="flex items-center justify-center">
-                <a href="{{ route('quiz.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-700 aspect-square">
+                {{-- <a href="{{ route('quiz.index') }}" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-700 aspect-square"> --}}
+                <a href="" class="flex flex-col items-center justify-center w-20 gap-1 p-3 text-white transition-all bg-orange-600 rounded-md shadow-md hover:shadow-xl shadow-tersier hover:no-underline hover:bg-orange-700 aspect-square">
                     <i class="text-xl fa-solid fa-pen-clip"></i>
                     <span class="text-sm font-semibold uppercase">Quiz</span>
                 </a>

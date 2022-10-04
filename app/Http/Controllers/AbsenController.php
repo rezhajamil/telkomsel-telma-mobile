@@ -56,6 +56,10 @@ class AbsenController extends Controller
             'status' => 0
         ]);
 
+        DB::table('user_event')->where('email', auth()->user()->email)->update([
+            'poin' => auth()->user()->poin + $request->poin
+        ]);
+
         return back()->with('success', 'Berhasil Absen');
     }
 
