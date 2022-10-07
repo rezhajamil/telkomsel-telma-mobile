@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = DB::table('berita')->where('type', 'gambar')->get();
+        $news = DB::table('berita')->where('type', 'gambar')->where('role', 'tyes')->get();
         return view('news.index', compact('news'));
     }
 

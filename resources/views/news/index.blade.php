@@ -8,6 +8,7 @@
             <a href="{{ URL::to('/profile') }}" class="z-10 flex items-center p-3 rounded-full shadow h-fit w-fit bg-slate-50"><i class="fa-solid fa-user text-emerald-600"></i></a>
         </div>
     </div>
+    @if (count($news)>0)
     @foreach ($news as $idx => $data)
     <div class="p-3 mb-8 bg-white rounded-md shadow-lg shadow-tersier">
         <div class="w-full overflow-hidden rounded-md h-fit">
@@ -25,6 +26,11 @@
         </div>
     </div>
     @endforeach
+    @else
+    <div class="p-3 mb-8 bg-white rounded-md shadow-lg shadow-tersier">
+        <p class="text-emerald-600 font-semibold text-center">Tidak Ada Berita</p>
+    </div>
+    @endif
 
 </div>
 @endsection
