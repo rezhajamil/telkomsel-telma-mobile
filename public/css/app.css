@@ -1236,15 +1236,9 @@ select {
 .bg-transparent {
   background-color: transparent;
 }
-.bg-white\/75 {
-  background-color: rgb(255 255 255 / 0.75);
-}
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
-}
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
 }
 .fill-current {
   fill: currentColor;
@@ -1673,6 +1667,10 @@ select {
 .hover\:bg-amber-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(146 64 14 / var(--tw-bg-opacity));
+}
+.hover\:bg-emerald-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 95 70 / var(--tw-bg-opacity));
 }
 .hover\:bg-violet-800:hover {
   --tw-bg-opacity: 1;
