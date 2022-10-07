@@ -19,7 +19,9 @@
         <div class="mb-4">
             {!! $data->keterangan !!}
         </div>
-        <a href="{{ $data->link_meeting }}" class="px-3 py-2 text-white bg-emerald-600 transition-all hover:bg-emerald-800 font-semibold hover:no-underline rounded">Kunjungi <i class="fa-solid fa-right-long ml-2 text-white"></i></a>
+        @if ($data->link_meeting)
+        <a href="{{ $data->link_meeting }}" target="_blank" class="px-3 py-2 text-white bg-emerald-600 transition-all hover:bg-emerald-800 font-semibold hover:no-underline rounded">Kunjungi <i class="fa-solid fa-right-long ml-2 text-white"></i></a>
+        @endif
     </div>
     <div class="modal fade" id="modal{{ $idx }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
