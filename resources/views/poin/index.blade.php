@@ -12,28 +12,28 @@
         <table class="border-0">
             <tr class="">
                 <td class="w-1/2 px-2 py-4 text-xl font-semibold border-b-2 border-r-2 border-indigo-600">Absen</td>
-                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">80</td>
+                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">{{ number_format($absen,0,",",".") }}</td>
             </tr>
             <tr class="">
                 <td class="w-1/2 px-2 py-4 text-xl font-semibold border-b-2 border-r-2 border-indigo-600">Challenge</td>
-                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">80</td>
+                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">{{ number_format($challenge,0,",",".") }}</td>
             </tr>
             <tr class="">
                 <td class="w-1/2 px-2 py-4 text-xl font-semibold border-b-2 border-r-2 border-indigo-600">Quiz</td>
-                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">80</td>
+                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">{{ number_format($quiz,0,",",".") }}</td>
             </tr>
             <tr class="">
                 <td class="w-1/2 px-2 py-4 text-xl font-semibold border-b-2 border-r-2 border-indigo-600">By.U</td>
-                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">80</td>
+                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-b-2 border-indigo-600">{{ number_format($byu,0,",",".") }}</td>
             </tr>
             <tr class="">
                 <td class="w-1/2 px-2 py-4 text-xl font-semibold border-r-2 border-indigo-600">Orbit</td>
-                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-indigo-600">80</td>
+                <td class="w-1/2 px-2 py-4 text-xl font-semibold text-right border-indigo-600">{{ number_format($orbit,0,",",".") }}</td>
             </tr>
         </table>
-        <div class="p-4 mx-auto my-4 text-center bg-indigo-600 rounded-full w-fit h-fit aspect-square">
-            <p class="text-xs font-semibold text-white">Total</p>
-            <p class="text-4xl font-semibold text-white">400</p>
+        <div class="flex flex-col items-center justify-center p-3 mx-auto my-4 text-center bg-indigo-600 rounded-full w-fit h-fit aspect-square">
+            {{-- <p class="text-sm font-semibold text-white">Total</p> --}}
+            <p class="text-2xl font-semibold text-white">{{ number_format($total,0,",",".") }}</p>
         </div>
     </div>
 </div>

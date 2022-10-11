@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absen;
+use App\Models\Poin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -58,6 +59,15 @@ class AbsenController extends Controller
 
         DB::table('user_event')->where('email', auth()->user()->email)->update([
             'poin' => auth()->user()->poin + $request->poin
+        ]);
+
+        $poin = Poin::add_poin([
+            'email' => auth()->user()->email,
+            'telp' => auth()->user()->telp,
+            'jenis' => 'Absen',
+            'keterangan' => $request->judul,
+            'jumlah' => $request->poin,
+            'tanggal' => date('Y-m-d H:i:s')
         ]);
 
         return back()->with('success', 'Berhasil Absen');

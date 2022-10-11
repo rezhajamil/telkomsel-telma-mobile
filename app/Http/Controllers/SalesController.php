@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poin;
 use App\Rules\Msisdn;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,6 +58,19 @@ class SalesController extends Controller
             'msisdn' => $request->msisdn,
             'date' => date('Y-m-d'),
             'status' => '0'
+        ]);
+
+        DB::table('user_event')->where('email', auth()->user()->email)->update([
+            'poin' => auth()->user()->poin + $paket->poin
+        ]);
+
+        Poin::add_poin([
+            'email' => auth()->user()->email,
+            'telp' => auth()->user()->telp,
+            'jenis' => 'Orbit',
+            'keterangan' => $paket->jenis,
+            'jumlah' => $paket->poin,
+            'tanggal' => date('Y-m-d H:i:s')
         ]);
 
         return back()->with('success', 'Berhasil Submit Penjualan');

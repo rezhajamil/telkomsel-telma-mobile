@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Challenge;
+use App\Models\Poin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +45,7 @@ class ChallengeController extends Controller
         ]);
 
         $sosmed = DB::table('sosmed')->where('telp', Auth::user()->telp)->where('challenge', $request->judul)->count();
+        $challenge = DB::table('daftar_challege')->where('judul', $request->judul)->first();
 
         if ($sosmed) {
             return back()->with('error', 'Anda Sudah Mengupload untuk Challenge Ini');
@@ -55,10 +57,23 @@ class ChallengeController extends Controller
             'challenge' => $request->judul,
             'link' => $request->url,
             'keterangan' => '0',
-            'poin' => '0',
+            'poin' => $challenge->poin,
             'approver' => '0',
             'status' => '0',
             'date' => date('Y-m-d'),
+        ]);
+
+        DB::table('user_event')->where('email', auth()->user()->email)->update([
+            'poin' => auth()->user()->poin + $challenge->poin
+        ]);
+
+        Poin::add_poin([
+            'email' => auth()->user()->email,
+            'telp' => auth()->user()->telp,
+            'jenis' => 'Challenge',
+            'keterangan' => $request->judul,
+            'jumlah' => $challenge->poin,
+            'tanggal' => date('Y-m-d H:i:s')
         ]);
 
         return back()->with('success', 'Berhasil Mengupload Challenge');

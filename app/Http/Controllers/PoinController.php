@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Poin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PoinController extends Controller
 {
@@ -14,7 +15,39 @@ class PoinController extends Controller
      */
     public function index()
     {
-        return view('poin.index');
+        $poin_history = DB::table('poin_history')->where('email', auth()->user()->email)->get();
+
+        $absen = 0;
+        $challenge = 0;
+        $quiz = 0;
+        $byu = 0;
+        $orbit = 0;
+
+        foreach ($poin_history as $key => $value) {
+            switch ($value->jenis) {
+                case 'Absen':
+                    $absen += $value->jumlah;
+                    break;
+                case 'Challenge':
+                    $challenge += $value->jumlah;
+                    break;
+                case 'Quiz':
+                    $quiz += $value->jumlah;
+                    break;
+                case 'BYU':
+                    $byu += $value->jumlah;
+                    break;
+                case 'Orbit':
+                    $orbit += $value->jumlah;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $total = $absen + $challenge + $quiz + $byu + $orbit;
+
+        return view('poin.index', compact('absen', 'challenge', 'quiz', 'byu', 'orbit', 'total'));
     }
 
     /**
