@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Challenge;
-use App\Models\Poin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,14 +60,6 @@ class ChallengeController extends Controller
             'date' => date('Y-m-d'),
         ]);
 
-        Poin::add_poin([
-            'email' => auth()->user()->email,
-            'telp' => auth()->user()->telp,
-            'jenis' => 'Challenge',
-            'keterangan' => $request->judul,
-            'jumlah' => $challenge->poin,
-            'tanggal' => date('Y-m-d H:i:s')
-        ]);
 
         return back()->with('success', 'Berhasil Mengupload Challenge');
     }
