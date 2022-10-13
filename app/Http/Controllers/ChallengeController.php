@@ -56,9 +56,7 @@ class ChallengeController extends Controller
             'id_digipos' => Auth::user()->telp,
             'challenge' => $request->judul,
             'link' => $request->url,
-            'keterangan' => '0',
             'poin' => $challenge->poin,
-            'approver' => '0',
             'status' => '0',
             'date' => date('Y-m-d'),
         ]);
