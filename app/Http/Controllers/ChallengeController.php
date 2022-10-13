@@ -61,10 +61,6 @@ class ChallengeController extends Controller
             'date' => date('Y-m-d'),
         ]);
 
-        DB::table('user_event')->where('email', auth()->user()->email)->update([
-            'poin' => auth()->user()->poin + $challenge->poin
-        ]);
-
         Poin::add_poin([
             'email' => auth()->user()->email,
             'telp' => auth()->user()->telp,
