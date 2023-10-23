@@ -17,7 +17,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $paket = DB::table('kategori')->select('detail')->distinct()->where('detail', 'like', 'Orbit%')->get();
+        $paket = DB::table('kategori')->select('detail')->distinct()->where('detail', 'like', '%Byu%')->get();
 
         return view('sales.index', compact('paket'));
     }

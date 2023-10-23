@@ -10,14 +10,15 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                sans: ["Product Sans"],
             },
             colors: {
                 transparent: "transparent",
                 current: "currentColor",
-                premier: "#B90027",
-                sekunder: "#021942",
-                tersier: "#5A595E",
+                premier: "#02c1ef",
+                sekunder: "#F4801D",
+                tersier: "#94C83E",
+                dark: "#161616",
             },
         },
     },

@@ -50,11 +50,11 @@ class AktivasiAkunNotification extends Notification
             'token' => \bcrypt($token),
         ]);
         return (new MailMessage)
-            ->subject("Aktivasi Akun Digi Squad")
-            ->line('Tekan tombol dibawah ini untuk membuat password akun DigiSquad Anda')
+            ->subject("Aktivasi Akun TELMA Mobile")
+            ->line('Tekan tombol dibawah ini untuk membuat password akun TELMA Mobile Anda')
             ->action('Buat Password Akun', URL::to("/reset-password/") . "/" . $token . '?email=' . urlencode($notifiable->email))
             ->line('Terimakasih telah mendukung kami')
-            ->salutation("DigiSquad");
+            ->salutation("TELMA");
     }
 
     /**

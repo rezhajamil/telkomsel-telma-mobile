@@ -32,7 +32,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: Product Sans; /* 4 */
 }
 
 /*
@@ -1191,7 +1191,7 @@ select {
 }
 .bg-tersier {
   --tw-bg-opacity: 1;
-  background-color: rgb(90 89 94 / var(--tw-bg-opacity));
+  background-color: rgb(148 200 62 / var(--tw-bg-opacity));
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -1211,7 +1211,7 @@ select {
 }
 .bg-sekunder {
   --tw-bg-opacity: 1;
-  background-color: rgb(2 25 66 / var(--tw-bg-opacity));
+  background-color: rgb(244 128 29 / var(--tw-bg-opacity));
 }
 .bg-emerald-600 {
   --tw-bg-opacity: 1;
@@ -1231,7 +1231,7 @@ select {
 }
 .bg-premier {
   --tw-bg-opacity: 1;
-  background-color: rgb(185 0 39 / var(--tw-bg-opacity));
+  background-color: rgb(2 193 239 / var(--tw-bg-opacity));
 }
 .bg-transparent {
   background-color: transparent;
@@ -1239,6 +1239,20 @@ select {
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
+}
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+.from-premier {
+  --tw-gradient-from: #02c1ef;
+  --tw-gradient-to: rgb(2 193 239 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-sky-700 {
+  --tw-gradient-to: #0369a1;
+}
+.to-sky-500 {
+  --tw-gradient-to: #0ea5e9;
 }
 .fill-current {
   fill: currentColor;
@@ -1348,7 +1362,7 @@ select {
   vertical-align: middle;
 }
 .font-sans {
-  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Product Sans;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -1373,10 +1387,6 @@ select {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 .text-8xl {
   font-size: 6rem;
@@ -1434,7 +1444,7 @@ select {
 }
 .text-tersier {
   --tw-text-opacity: 1;
-  color: rgb(90 89 94 / var(--tw-text-opacity));
+  color: rgb(148 200 62 / var(--tw-text-opacity));
 }
 .text-gray-100 {
   --tw-text-opacity: 1;
@@ -1454,7 +1464,7 @@ select {
 }
 .text-sekunder {
   --tw-text-opacity: 1;
-  color: rgb(2 25 66 / var(--tw-text-opacity));
+  color: rgb(244 128 29 / var(--tw-text-opacity));
 }
 .text-gray-200 {
   --tw-text-opacity: 1;
@@ -1494,7 +1504,7 @@ select {
 }
 .text-premier {
   --tw-text-opacity: 1;
-  color: rgb(185 0 39 / var(--tw-text-opacity));
+  color: rgb(2 193 239 / var(--tw-text-opacity));
 }
 .text-gray-800 {
   --tw-text-opacity: 1;
@@ -1544,7 +1554,7 @@ select {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .shadow-tersier {
-  --tw-shadow-color: #5A595E;
+  --tw-shadow-color: #94C83E;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .shadow-\[\#aeaeae\] {
@@ -1722,7 +1732,7 @@ select {
 }
 .hover\:text-premier:hover {
   --tw-text-opacity: 1;
-  color: rgb(185 0 39 / var(--tw-text-opacity));
+  color: rgb(2 193 239 / var(--tw-text-opacity));
 }
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;

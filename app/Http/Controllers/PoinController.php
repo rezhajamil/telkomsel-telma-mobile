@@ -21,7 +21,6 @@ class PoinController extends Controller
         $challenge = 0;
         $quiz = 0;
         $byu = 0;
-        $orbit = 0;
 
         foreach ($poin_history as $key => $value) {
             switch ($value->jenis) {
@@ -37,17 +36,16 @@ class PoinController extends Controller
                 case 'BYU':
                     $byu += $value->jumlah;
                     break;
-                case 'Orbit':
-                    $orbit += $value->jumlah;
-                    break;
                 default:
                     break;
             }
         }
 
-        $total = $absen + $challenge + $quiz + $byu + $orbit;
+        // ddd($poin_history);
 
-        return view('poin.index', compact('absen', 'challenge', 'quiz', 'byu', 'orbit', 'total'));
+        $total = $absen + $challenge + $quiz + $byu;
+
+        return view('poin.index', compact('absen', 'challenge', 'quiz', 'byu', 'total'));
     }
 
     /**
